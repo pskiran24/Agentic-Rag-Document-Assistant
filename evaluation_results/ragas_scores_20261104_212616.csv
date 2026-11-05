@@ -1,0 +1,6 @@
+question,faithfulness,answer_relevancy,context_precision,context_recall
+What is self-attention?,,,,
+What is the purpose of multi-head attention?,,,,
+What is scaled dot-product attention?,,,,
+How many attention heads are used in the original Transformer?,,,,
+What are the three types of attention used in the Transformer?,,,,

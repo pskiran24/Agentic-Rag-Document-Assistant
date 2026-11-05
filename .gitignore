@@ -1,0 +1,21 @@
+# Environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# Model and vector database files
+*.faiss
+*.pkl
+
+# Cache
+.pytest_cache/
+.cache/

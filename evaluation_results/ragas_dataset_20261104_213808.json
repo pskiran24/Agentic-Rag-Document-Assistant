@@ -1,0 +1,50 @@
+[
+    {
+        "user_input": "What is self-attention?",
+        "retrieved_contexts": [
+            "reduced to a constant number of operations, albeit at the cost of reduced effective resolution due\nto averaging attention-weighted positions, an effect we counteract with Multi-Head Attention as\ndescribed in section 3.2.\nSelf-attention, sometimes called intra-attention is an attention mechanism relating different positions\nof a single sequence in order to compute a representation of the sequence. Self-attention has been"
+        ],
+        "response": "Self-attention is an attention mechanism that relates different positions of a single sequence in order to compute a representation of the sequence [attention.pdf, p. 2].",
+        "reference": "Self-attention is an attention mechanism that relates different positions of a single sequence."
+    },
+    {
+        "user_input": "What is the purpose of multi-head attention?",
+        "retrieved_contexts": [
+            "output values. These are concatenated and once again projected, resulting in the final values, as\ndepicted in Figure 2.\nMulti-head attention allows the model to jointly attend to information from different representation\nsubspaces at different positions. With a single attention head, averaging inhibits this.\nMultiHead(Q, K, V) = Concat(head1, ...,headh)WO\nwhere headi = Attention(QWQ\ni , KWK\ni , V WV\ni )\nWhere the projections are parameter matricesWQ\ni ∈ Rdmodel×dk , WK\ni ∈ Rdmodel×dk , WV",
+            "Scaled Dot-Product Attention\n Multi-Head Attention\nFigure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several\nattention layers running in parallel.\nof the values, where the weight assigned to each value is computed by a compatibility function of the\nquery with the corresponding key.\n3.2.1 Scaled Dot-Product Attention\nWe call our particular attention \"Scaled Dot-Product Attention\" (Figure 2). The input consists of",
+            "i ∈ Rdmodel×dk , WK\ni ∈ Rdmodel×dk , WV\ni ∈ Rdmodel×dv\nand WO ∈ Rhdv×dmodel .\nIn this work we employ h = 8 parallel attention layers, or heads. For each of these we use\ndk = dv = dmodel/h = 64. Due to the reduced dimension of each head, the total computational cost\nis similar to that of single-head attention with full dimensionality.\n3.2.3 Applications of Attention in our Model\nThe Transformer uses multi-head attention in three different ways:",
+            "reduced to a constant number of operations, albeit at the cost of reduced effective resolution due\nto averaging attention-weighted positions, an effect we counteract with Multi-Head Attention as\ndescribed in section 3.2.\nSelf-attention, sometimes called intra-attention is an attention mechanism relating different positions\nof a single sequence in order to compute a representation of the sequence. Self-attention has been"
+        ],
+        "response": "Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions, enabling it to capture more nuanced and contextual relationships between different parts of the input data [attention.pdf, p. 5]. This is in contrast to single-head attention, which averages the weights assigned to each value, potentially inhibiting this ability [attention.pdf, p. 4].",
+        "reference": "Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions."
+    },
+    {
+        "user_input": "What is scaled dot-product attention?",
+        "retrieved_contexts": [
+            "Scaled Dot-Product Attention\n Multi-Head Attention\nFigure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several\nattention layers running in parallel.\nof the values, where the weight assigned to each value is computed by a compatibility function of the\nquery with the corresponding key.\n3.2.1 Scaled Dot-Product Attention\nWe call our particular attention \"Scaled Dot-Product Attention\" (Figure 2). The input consists of",
+            "Attention(Q, K, V) = softmax(QKT\n√dk\n)V (1)\nThe two most commonly used attention functions are additive attention [2], and dot-product (multi-\nplicative) attention. Dot-product attention is identical to our algorithm, except for the scaling factor\nof 1√dk\n. Additive attention computes the compatibility function using a feed-forward network with\na single hidden layer. While the two are similar in theoretical complexity, dot-product attention is",
+            "extremely small gradients 4. To counteract this effect, we scale the dot products by 1√dk\n.\n3.2.2 Multi-Head Attention\nInstead of performing a single attention function with dmodel-dimensional keys, values and queries,\nwe found it beneficial to linearly project the queries, keys and values h times with different, learned\nlinear projections to dk, dk and dv dimensions, respectively. On each of these projected versions of"
+        ],
+        "response": "Scaled Dot-Product Attention is a type of attention mechanism described in [attention.pdf, p. 4] on PDF page 4. It consists of computing the weight assigned to each value by a compatibility function of the query with the corresponding key, and is identical to the algorithm described in [attention.pdf, p. 4], except for the scaling factor of √dk.",
+        "reference": "Scaled dot-product attention computes dot products of queries with keys, scales the results by the square root of the key dimension, applies softmax, and uses the resulting weights on values."
+    },
+    {
+        "user_input": "How many attention heads are used in the original Transformer?",
+        "retrieved_contexts": [
+            "i ∈ Rdmodel×dk , WK\ni ∈ Rdmodel×dk , WV\ni ∈ Rdmodel×dv\nand WO ∈ Rhdv×dmodel .\nIn this work we employ h = 8 parallel attention layers, or heads. For each of these we use\ndk = dv = dmodel/h = 64. Due to the reduced dimension of each head, the total computational cost\nis similar to that of single-head attention with full dimensionality.\n3.2.3 Applications of Attention in our Model\nThe Transformer uses multi-head attention in three different ways:",
+            "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, shown in the left and right halves of Figure 1,\nrespectively.\n3.1 Encoder and Decoder Stacks\nEncoder: The encoder is composed of a stack of N = 6 identical layers. Each layer has two\nsub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-"
+        ],
+        "response": "The original Transformer uses 8 parallel attention layers, or heads [attention.pdf, p. 5]. Each head has a reduced dimensionality of 64 (dk = dv = dmodel/h), where h is the number of heads.",
+        "reference": "The paper reports using eight parallel attention layers, or heads, in the described Transformer configuration."
+    },
+    {
+        "user_input": "What are the three types of attention used in the Transformer?",
+        "retrieved_contexts": [
+            "i ∈ Rdmodel×dk , WK\ni ∈ Rdmodel×dk , WV\ni ∈ Rdmodel×dv\nand WO ∈ Rhdv×dmodel .\nIn this work we employ h = 8 parallel attention layers, or heads. For each of these we use\ndk = dv = dmodel/h = 64. Due to the reduced dimension of each head, the total computational cost\nis similar to that of single-head attention with full dimensionality.\n3.2.3 Applications of Attention in our Model\nThe Transformer uses multi-head attention in three different ways:",
+            "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, shown in the left and right halves of Figure 1,\nrespectively.\n3.1 Encoder and Decoder Stacks\nEncoder: The encoder is composed of a stack of N = 6 identical layers. Each layer has two\nsub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-",
+            "Attention(Q, K, V) = softmax(QKT\n√dk\n)V (1)\nThe two most commonly used attention functions are additive attention [2], and dot-product (multi-\nplicative) attention. Dot-product attention is identical to our algorithm, except for the scaling factor\nof 1√dk\n. Additive attention computes the compatibility function using a feed-forward network with\na single hidden layer. While the two are similar in theoretical complexity, dot-product attention is"
+        ],
+        "response": "The provided document passages do not explicitly state that there are only three types of attention used in the Transformer. However, they do mention two common types of attention functions: additive attention and dot-product (multi-plicative) attention.\n\nAccording to passage [attention.pdf, p. 4], dot-product attention is identical to the algorithm described in the passage, except for the scaling factor of 1/√dk. Passage [attention.pdf, p. 3] does not explicitly mention a third type of attention, but it mentions \"multi-head self-attention\" as one of the components of the Transformer architecture.\n\nTherefore, the answer is:\n\nThe provided documents do not contain sufficient information to confirm the existence of exactly three types of attention used in the Transformer.",
+        "reference": "The Transformer uses encoder self-attention, decoder self-attention, and encoder-decoder attention."
+    }
+]

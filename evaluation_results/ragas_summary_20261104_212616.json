@@ -1,0 +1,60 @@
+{
+    "evaluation_date": "2026-11-04T21:26:16.964132",
+    "ragas_version": "0.4.3",
+    "llm_model": "llama3.2:latest",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "number_of_questions": 5,
+    "average_scores": {
+        "faithfulness": null,
+        "answer_relevancy": null,
+        "context_precision": null,
+        "context_recall": null
+    },
+    "citation_audits": [
+        {
+            "question": "What is self-attention?",
+            "citation_count": 0,
+            "valid_citation_count": 0,
+            "invalid_citations": [],
+            "citation_precision": null,
+            "sentence_citation_coverage": null
+        },
+        {
+            "question": "What is the purpose of multi-head attention?",
+            "citation_count": 0,
+            "valid_citation_count": 0,
+            "invalid_citations": [],
+            "citation_precision": null,
+            "sentence_citation_coverage": null
+        },
+        {
+            "question": "What is scaled dot-product attention?",
+            "citation_count": 2,
+            "valid_citation_count": 2,
+            "invalid_citations": [],
+            "citation_precision": 1.0,
+            "sentence_citation_coverage": 0.0
+        },
+        {
+            "question": "How many attention heads are used in the original Transformer?",
+            "citation_count": 0,
+            "valid_citation_count": 0,
+            "invalid_citations": [],
+            "citation_precision": null,
+            "sentence_citation_coverage": null
+        },
+        {
+            "question": "What are the three types of attention used in the Transformer?",
+            "citation_count": 0,
+            "valid_citation_count": 0,
+            "invalid_citations": [],
+            "citation_precision": null,
+            "sentence_citation_coverage": null
+        }
+    ],
+    "out_of_scope_test": {
+        "question": "Explain quantum computing.",
+        "answer": "The provided documents do not contain sufficient information to answer this question.",
+        "passed": true
+    }
+}

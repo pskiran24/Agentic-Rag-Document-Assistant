@@ -1,0 +1,6 @@
+question,faithfulness,answer_relevancy,context_precision,context_recall
+What is self-attention?,,0.0,0.9999999999,0.6666666666666666
+What is the purpose of multi-head attention?,,0.0,0.999999999975,1.0
+What is scaled dot-product attention?,,0.0,0.9999999999666667,0.5714285714285714
+How many attention heads are used in the original Transformer?,,0.0,0.99999999995,0.6
+What are the three types of attention used in the Transformer?,,0.0,0.9999999999666667,1.0
