@@ -22,6 +22,9 @@ Instead of directly generating an answer, the application follows a workflow:
 6. Abstain when the retrieved documents do not contain sufficient information.
 
 The application includes a Streamlit interface and LangSmith tracing and evaluation.
+## Application Screenshot
+
+![Streamlit Application](assets/streamlit-app.png)
 
 ## Architecture
 
